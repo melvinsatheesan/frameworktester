@@ -9,6 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Install PDF
+        run: |
+          sudo apt update -y;
+          sudo apt-get install -y wkhtmltopdf;
       
       - name: Trigger actions
         uses: melvinsatheesan/melvinsatheesan-pdfgenerator@v1.8
